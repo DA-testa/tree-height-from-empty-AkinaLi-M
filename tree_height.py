@@ -45,13 +45,15 @@ def main():
             return
     # account for github input inprecision
         filename = "test/" + str(filename)
-        
-        with open(filename, 'r') as file:
+        try:
+            with open(filename, 'r') as file:
                 n = int(file.readline())
                 parents = list(map(int, file.readline().split()))
-        print(compute_height(n, parents))
-       
-    
+            print(compute_height(n, parents))
+        except Exception as e:
+            print(f"Error while reading input file: {e}")
+            return
+
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
