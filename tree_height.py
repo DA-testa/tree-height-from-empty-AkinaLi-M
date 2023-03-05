@@ -16,7 +16,7 @@ def compute_height(n, parents):
             return heights[node]
 
         # If the node is the root, its height is 1
-        if parents[node] == 1:
+        if parents[node] == -1:
             heights[node] = 1
         else:
             # Calculate the height of the parent and add 1 to it to get the height
