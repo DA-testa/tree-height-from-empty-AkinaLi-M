@@ -46,8 +46,8 @@ def main():
             print("Enter a file name without letter 'a'")
             return
     # account for github input inprecision
-    # Construct the full path to the input file using os.path.join
-        filename = os.path.join("test", filename)
+    
+        filename = "test/" + str(filename)
         try:
             with open(filename, 'r') as file:
                 n = int(file.readline())
