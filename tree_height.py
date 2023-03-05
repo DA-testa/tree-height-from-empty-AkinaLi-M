@@ -14,14 +14,12 @@ def compute_height(n, parents):
         # If the height of the node has already been calculated, return it
         if heights[node] != -1:
             return heights[node]
-
         # If the node is the root, its height is 1
         if parents[node] == -1:
             heights[node] = 1
         else:
             # Calculate the height of the parent and add 1 to it to get the height
             heights[node] = get_heights(parents[node]) + 1
-
         return heights[node]
 
 
@@ -46,13 +44,12 @@ def main():
             print("Enter a file name without letter 'a'")
             return
     # account for github input inprecision
-    
         filename = "test/" + str(filename)
         
         with open(filename, 'r') as file:
                 n = int(file.readline())
                 parents = list(map(int, file.readline().split()))
-            print(compute_height(n, parents))
+        print(compute_height(n, parents))
        
     
 
